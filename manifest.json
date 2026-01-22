@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Trishokti Auto Link Hunter V3",
+  "version": "3.0",
+  "description": "Active Injection System for Shorts, TikTok & Reels.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "downloads",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
